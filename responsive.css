@@ -1,0 +1,38 @@
+@media (max-width: 991px) {
+  .services-section .col-lg-6:last-child .row {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 100vw;
+    aspect-ratio: 1 / 1;
+    padding: 0;
+  }
+  .hero-title {
+    font-size: 3rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  .services-title,
+  .portfolio-title,
+  .video-title,
+  .blog-title {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .navbar-brand img {
+    height: 30px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+}
