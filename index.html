@@ -1,52 +1,326 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mening Profilim</title>
-    <link rel="stylesheet" href="style.css">
-
+    <title>Alabanda - Digital Agency</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <h1>Mening Profilim</h1>
-            <nav class="nav">
-                <a href="#" class="nav-link">Bosh sahifa</a>
-                <a href="#" class="nav-link">Portfolio</a>
-                <a href="#" class="nav-link">Aloqa</a>
-            </nav>
+            <a class="navbar-brand" href="#">
+                <img src="./images/logo.svg" alt="Alabanda Logo" height="40">
+            </a>
+            <button class="navbar-toggler custom-menu-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+                <button class="btn btn-primary-custom ms-3">Menu</button>
+            </div>
         </div>
-    </header>
-    <main>
-        <section class="profile-section">
-            <div class="profile-card">
-                <img src="./Norimboyev__Azizjon.JPG" alt="Profil rasmi" class="profile-img">
-                <h2>Norimboyev Azizjon </h2>
-                <p class="job-title">Frontend Developer</p>
-                <button class="contact-btn">Menga yozing</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <h1 class="hero-title">MAKES<br>YOU CURIOUS</h1>
+            <div class="divider"></div>
+            <h4 class="hero-subtitle">
+                Full service digital agency with a passion for performance 
+                marketing and solutions that inspire curiosity.
+            </h4>
+            <button class="btn btn-primary-custom hero-readmore-btn">READ MORE</button>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="hero-text-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h3>Have you fallen in love with Alabanda?</h3>
+                    <p>Asymmetrical quinoa stumptown blog, YOLO XOXO trust fund selfies aesthetic dreamcatcher Helvetica 8-bit.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <button class="btn btn-secondary-custom">BUY IT NOW</button>
+                </div>
             </div>
-        </section>
-        <section class="info-section">
-            <div class="info-left">
-                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="JS" style="width:48px; height:48px; float:left; margin-right:10px; border-radius:8px;">
-                <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" alt="HTML" style="width:48px; height:48px; float:left; margin-right:10px; border-radius:8px;">
-                <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" alt="CSS" style="width:48px; height:48px; float:left; margin-right:16px; border-radius:8px;">
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3 class="section-title">From an idea to an unforgettable and measurable digital experience.</h3>
+                    <div class="divider"></div>
+                    <p>Integrating flawless production, cutting edge technology and meticulous performance measuring.</p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row g-4">
+                        <!-- Service 1 -->
+                        <div class="col-md-6 col-sm-6">
+                            <div class="service-item">
+                                <div class="service-icon">
+                                    <img src="./images/service-1.svg" alt="Service 1" width="60">
+                                </div>
+                                <h5>Strategy</h5>
+                            </div>
+                        </div>
+                        <!-- Service 2 -->
+                        <div class="col-md-6 col-sm-6">
+                            <div class="service-item">
+                                <div class="service-icon">
+                                    <img src="./images/service-2.svg" alt="Service 2" width="60">
+                                </div>
+                                <h5>Design</h5>
+                            </div>
+                        </div>
+                        <!-- Service 3 -->
+                        <div class="col-md-6 col-sm-6">
+                            <div class="service-item">
+                                <div class="service-icon">
+                                    <img src="./images/service-3.svg" alt="Service 3" width="60">
+                                </div>
+                                <h5>Development</h5>
+                            </div>
+                        </div>
+                        <!-- Service 4 -->
+                        <div class="col-md-6 col-sm-6">
+                            <div class="service-item">
+                                <div class="service-icon">
+                                    <img src="./images/service-4.svg" alt="Service 4" width="60">
+                                </div>
+                                <h5>Marketing</h5>
+                            </div>
+                        </div>
+                        <!-- Service 5 -->
+                        <div class="col-md-6 col-sm-6">
+                            <div class="service-item">
+                                <div class="service-icon">
+                                    <img src="./images/service-5.svg" alt="Service 5" width="60">
+                                </div>
+                                <h5>Analytics</h5>
+                            </div>
+                        </div>
+                        <!-- Service 6 -->
+                        <div class="col-md-6 col-sm-6">
+                            <div class="service-item">
+                                <div class="service-icon">
+                                    <img src="./images/service-6.svg" alt="Service 6" width="60">
+                                </div>
+                                <h5>Support</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio-section" id="portfolio">
+        <div class="container">
+            <h3 class="section-title">Recent Works</h3>
+            <div class="divider portfolio-divider"></div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="portfolio-item">
+                        <img src="./images/Portfolio-1.png" alt="Portfolio 1" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <p>// Web Design</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="portfolio-item">
+                        <img src="./images/Portfolio-2.png" alt="Portfolio 2" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <p>// Branding</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="portfolio-item">
+                        <img src="./images/mask(3).png" alt="Portfolio 3" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <p>// Printing</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="portfolio-item">
+                        <img src="./images/Portfolio-4.png" alt="Portfolio 4" class="portfolio-img">
+                        <div class="portfolio-overlay">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <p>// Mobile App</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <img src="./images/video.png" alt="Video Presentation" class="video-img">
+                </div>
+                <div class="col-lg-6">
+                    <h4 class="section-title">Tales of a Tiger</h4>
+                    <div class="divider video-divider"></div>
+                    <p>Turnip greens yarrow ricebean rutabaga endive cauliflower. Kohlrabi radish okra azuki bean corn fava bean mustard tigernut broccoli and quinoa beets. Love cherries green heaven.</p>
+                    <p>Pea horseradish azuki bean lettuce avocado asparagus okra. Kohlrabi radish okra azuki bean corn.</p>
+                    <button class="btn btn-primary-custom mt-4">
+                        <i class="fas fa-play me-2"></i> WATCH THE VIDEO
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-section" id="blog">
+        <div class="container">
+            <h3 class="section-title">Latest News</h3>
+            <div class="divider blog-divider"></div>
+            <div class="row g-4">
+                <!-- Blog Post 1 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="blog-item">
+                        <img src="./images/blog-1.png" alt="Blog Post 1" class="blog-img">
+                        <div class="blog-overlay">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <p class="blog-caption">Web Design Trends 2024</p>
+                    </div>
+                </div>
+                <!-- Blog Post 2 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="blog-item">
+                        <img src="./images/mask3(3).png" alt="Blog Post 2" class="blog-img">
+                        <div class="blog-overlay">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <p class="blog-caption">SEO Best Practices</p>
+                    </div>
+                </div>
+                <!-- Blog Post 3 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="blog-item">
+                        <img src="./images/blog-3.png" alt="Blog Post 3" class="blog-img">
+                        <div class="blog-overlay">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <p class="blog-caption">Mobile First Design</p>
+                    </div>
+                </div>
+                <!-- Blog Post 4 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="blog-item">
+                        <img src="./images/blog-4.png" alt="Blog Post 4" class="blog-img">
+                        <div class="blog-overlay">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <p class="blog-caption">Social Media Marketing</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <div class="container text-center">
+            <div class="testimonial-quote">"</div>
+            <p class="testimonial-text">Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth.</p>
+            <p class="testimonial-author">- John Lennon</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-logo">
+                <img src="./images/Footer Logo.png" alt="Alabanda Logo" height="50">
+            </div>
+            <h4 class="footer-heading">We'd love to hear all about your project.<br>Get in touch with us.</h4>
+            
+            <div class="footer-social-row">
+                <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
+                <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+            </div>
+            
+            <div class="footer-links-row">
+                <div class="footer-links-col">
+                    <h5>CONTACT US</h5>
+                    <div class="footer-contact">
+                        <i class="fas fa-phone me-2"></i> +90 555 55 66
+                    </div>
+                    <div class="footer-contact">
+                        <i class="fas fa-envelope me-2"></i> info@alabanda.com
+                    </div>
+                </div>
                 
+                <div class="footer-links-col">
+                    <h5>ADDRESS</h5>
+                    <div class="footer-contact">
+                        <i class="fas fa-map-marker-alt me-2"></i>
+                        Papatya Sok. No:33<br>Koycegiz, Mugla / TURKEY
+                    </div>
+                </div>
+                
+                <div class="footer-links-col">
+                    <h5>HELP</h5>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-question-circle me-2"></i> What is Alabanda?</a></li>
+                        <li><a href="#"><i class="fas fa-download me-2"></i> How to install it?</a></li>
+                        <li><a href="#"><i class="fas fa-cog me-2"></i> How to customize it?</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links-col">
+                    <h5>MENU</h5>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-file-contract me-2"></i> Terms & Conditions</a></li>
+                        <li><a href="#"><i class="fas fa-user-check me-2"></i> Terms of Use</a></li>
+                        <li><a href="#"><i class="fas fa-question me-2"></i> FAQ</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="info-right">
-                <p><b>Dasturlash haqida:</b><br>
-                - HTML: Veb sahifalarning tuzilishini yaratadi.<br>
-                - CSS: Sahifalarga dizayn va uslub beradi.<br>
-                - JavaScript: Sahifaga interaktivlik qo'shadi.<br>
-                - Responsive dizayn: Har xil qurilmalarda to'g'ri ko'rinish uchun muhim.<br>
-                - Box model: Har bir elementning margin, border, padding va content qismlaridan iboratligini anglatadi.
-                </p>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    Copyright © 2014 <span class="highlight">AristoTheme</span>. All rights reserved.
+                </div>
+                <a href="#home" class="back-to-top" id="backToTop">
+                    <i class="fas fa-chevron-up me-2"></i> BACK TO TOP
+                </a>
             </div>
-        </section>
-    </main>
-    <footer class="footer">
-        © 2025 Mohirdev. Barcha huquqlar himoyalangan.
+        </div>
     </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
