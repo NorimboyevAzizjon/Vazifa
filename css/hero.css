@@ -1,0 +1,114 @@
+/* Hero Text Section (Green Banner) */
+.hero-text-section {
+  background: #77b978;
+  padding: 56px 0 56px 0;
+  color: #fff;
+  width: 100vw;
+  margin-left: -50vw;
+  left: 50%;
+  position: relative;
+}
+.hero-text-section > div > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  gap: 0;
+}
+.hero-text-section h3 {
+  font-family: 'Dosis', Arial, sans-serif;
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin: 0 0 18px 0;
+  color: #fff;
+  letter-spacing: 1.5px;
+}
+.hero-text-section p {
+  font-size: 1.15rem;
+  color: #e6f2e6;
+  margin: 0;
+  letter-spacing: 1.2px;
+  font-family: 'Dosis', Arial, sans-serif;
+}
+.btn-secondary-custom {
+  background: #faf8e9;
+  color: #6aaf6a;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Dosis', Arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  padding: 18px 56px;
+  box-shadow: 0 2px 12px rgba(106,175,106,0.08);
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+  margin-left: 32px;
+}
+.btn-secondary-custom:hover {
+  background: #e6e6d8;
+  color: #4e8c4e;
+}
+/* Hero Section */
+.hero-section {
+  background: url('../images/bg-img.png') center center/cover no-repeat;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 2px solid #e0e8e0;
+  border-radius: 0;
+  padding: 8px;
+  text-align: center;
+}
+.hero-title {
+  font-family: 'Dosis', Arial, sans-serif;
+  font-weight: 600;
+  font-size: 100px;
+  line-height: 110px;
+  letter-spacing: 2px;
+  text-align: center;
+  vertical-align: bottom;
+  color: #444;
+  margin-bottom: 0.2em;
+  position: relative;
+}
+.divider {
+  width: 80px;
+  height: 6px;
+  background: #fff;
+  color: #444;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 16px 0 16px 0;
+  margin: 0;
+  border-radius: 0 0 12px 12px;
+  letter-spacing: 0.03em;
+  text-align: center;
+  font-family: 'Dosis', Arial, sans-serif;
+}
+.hero-readmore-btn {
+  background: #6aaf6a;
+  color: #fff;
+  font-family: 'Dosis', Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: none;
+  border-radius: 6px;
+  padding: 16px 48px;
+  margin-top: 32px;
+  box-shadow: 0 2px 12px rgba(106,175,106,0.08);
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+  display: inline-block;
+}
+.hero-readmore-btn:hover {
+  background: #5a9c5a;
+  color: #fff;
+}

@@ -1,0 +1,75 @@
+/* Services Section */
+.services-section {
+  background: #fff;
+  padding: 64px 0 64px 0;
+}
+.services-section > div > div {
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: flex-start;
+  gap: 48px;
+}
+.services-title {
+  font-family: 'Dosis', Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: #444;
+  margin-bottom: 32px;
+  line-height: 1.2;
+}
+.services-divider {
+  width: 120px;
+  height: 8px;
+  background: #6aaf6a;
+  border-radius: 3px;
+  margin-bottom: 32px;
+}
+.services-section p {
+  color: #b0b8b0;
+  font-size: 18px;
+  margin-bottom: 0;
+  letter-spacing: 1px;
+}
+.services-section > div > div > div:last-child > div {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px 0;
+}
+.service-item {
+  background: #fff;
+  border: 2px solid #e0e8e0;
+  border-radius: 12px;
+  padding: 32px 12px 24px 12px;
+  text-align: center;
+  transition: box-shadow 0.3s, border 0.3s, transform 0.3s;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  box-shadow: 0 2px 12px rgba(106,175,106,0.06);
+  position: relative;
+}
+.service-item:hover {
+  border: 2.5px solid #6aaf6a;
+  box-shadow: 0 4px 24px rgba(106,175,106,0.13);
+  transform: translateY(-8px) scale(1.03);
+}
+.service-icon {
+  color: #6aaf6a;
+  font-size: 3.2rem;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 64px;
+}
+.service-item h5, .service-item-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #222;
+  margin: 0;
+  margin-top: 12px;
+}
