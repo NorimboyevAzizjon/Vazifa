@@ -1,8 +1,28 @@
+/* Divider for footer/testimonial, matching hero section */
+.footer-divider {
+  width: 80px;
+  height: 6px;
+  background: #6aaf6a;
+  color: #444;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 16px 0 16px 0;
+  margin: 0 auto 32px auto;
+  border-radius: 0 0 12px 12px;
+  letter-spacing: 0.03em;
+  text-align: center;
+  font-family: 'Dosis', Arial, sans-serif;
+  display: block;
+}
 /* Testimonial Section */
 .testimonial-section {
   background: #fff;
-  padding: 80px 0 0 0;
+  padding: 80px 80px 0 80px;
   text-align: center;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  box-sizing: border-box;
 }
 .testimonial-quote {
   font-size: 56px;
@@ -56,14 +76,10 @@
 .footer {
   background: #6aaf6a;
   color: #fff;
-  padding: 0;
+  padding: 0 80px;
   position: relative;
   margin-top: 0;
-  width: 100vw;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  width: 100%;
   box-sizing: border-box;
 }
 .footer-logo {
@@ -97,14 +113,14 @@
 .footer-social-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  justify-content: center;
   align-items: center;
   gap: 0;
-  margin: 48px auto 0 auto;
-  max-width: 1100px;
+  margin: 48px 0 0 0;
+  width: 100%;
   border-top: 1px solid #7fcf7f;
   border-bottom: 1px solid #7fcf7f;
   height: 90px;
+  box-sizing: border-box;
 }
 .footer-social-row a {
   color: #fff;
@@ -125,11 +141,11 @@
 .footer-links-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  justify-content: center;
   align-items: flex-start;
   gap: 0;
-  margin: 48px auto 0 auto;
-  max-width: 1100px;
+  margin: 48px 0 0 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 .footer-links-col {
   min-width: 180px;

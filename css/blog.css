@@ -1,3 +1,9 @@
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
 /* Blog Section (Latest News) */
 .blog-section {
   background: #faf8e9;
@@ -16,9 +22,13 @@
   width: 120px;
   height: 6px;
   background: #6aaf6a;
-  margin: 0 auto 40px auto;
-  display: block;
-  border-radius: 3px;
+}
+.blog-section {
+  background: #faf8e9;
+  padding: 64px 0 64px 0;
+  padding-left: 80px;
+  padding-right: 80px;
+  box-sizing: border-box;
 }
 .blog-list {
   display: grid;

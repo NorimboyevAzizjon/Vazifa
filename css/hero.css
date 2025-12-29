@@ -64,6 +64,9 @@
   border-radius: 0;
   padding: 8px;
   text-align: center;
+  padding-left: 80px;
+  padding-right: 80px;
+  box-sizing: border-box;
 }
 .hero-title {
   font-family: 'Dosis', Arial, sans-serif;
@@ -78,18 +81,11 @@
   position: relative;
 }
 .divider {
-  width: 80px;
-  height: 6px;
-  background: #fff;
-  color: #444;
-  font-size: 1.1rem;
-  font-weight: 600;
-  padding: 16px 0 16px 0;
-  margin: 0;
-  border-radius: 0 0 12px 12px;
-  letter-spacing: 0.03em;
-  text-align: center;
-  font-family: 'Dosis', Arial, sans-serif;
+  width: 180px;
+  height: 10px;
+  background: #444;
+  margin: 32px auto;
+  display: block;
 }
 .hero-readmore-btn {
   background: #6aaf6a;
