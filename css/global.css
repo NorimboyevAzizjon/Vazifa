@@ -1,0 +1,11 @@
+html, body {
+  overflow-x: hidden;
+  font-family: 'Dosis', sans-serif;
+}
+
+/* Base styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
