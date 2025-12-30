@@ -6,17 +6,16 @@
   .main-content {
     padding-top: 80px;
   }
-  .recent-works-cards {
+  .recent-works-cards, .news-grid {
     gap: 16px;
-    flex-wrap: wrap;
   }
-  .recent-work-card {
-    width: 48vw;
-    min-width: 180px;
+  .recent-work-card, .news-card {
+    width: 48vw !important;
+    min-width: 160px;
     max-width: 320px;
   }
-  .news-grid {
-    gap: 16px;
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
   .tiger-section {
     flex-direction: column;
@@ -51,24 +50,13 @@
     font-size: 2.2rem;
     line-height: 2.5rem;
   }
-  .recent-works-cards {
+  .recent-works-cards, .news-grid {
     flex-direction: column;
     gap: 10px;
     align-items: center;
   }
-  .recent-work-card {
-    width: 90vw;
-    min-width: 0;
-    max-width: 400px;
-  }
-  .news-grid {
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-  }
-  .news-card {
+  .recent-work-card, .news-card {
     width: 90vw !important;
-    height: auto !important;
     min-width: 0;
     max-width: 400px;
   }
