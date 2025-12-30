@@ -3,8 +3,7 @@
   display: flex;
   flex-direction: row;
   gap: 32px;
-  width: 100%;
-  max-width: 1500px;
+  width: 95%;
   margin: 0 auto;
   padding: 60px 0 40px 0;
   background: #fff;
@@ -14,6 +13,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+
   padding: 40px 32px 0 48px;
 }
 .services-left h3 {
@@ -98,11 +98,8 @@
   display: inline-block;
   transition: color 0.2s;
 }
-.service-link:hover {
-  color: #388e3c;
-}
 
-/* ========== TALES OF A TIGER SECTION ========== */
+/* ========== TIGER SECTION ========== */
 .tiger-section {
   display: flex;
   flex-direction: row;
