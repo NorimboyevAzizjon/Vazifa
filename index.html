@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -112,26 +111,26 @@
       <div class="recent-works-underline"></div>
       <div class="recent-works-cards">
         <div class="recent-work-card">
-          <img src="./images/Portfolio-1.png" alt="Work 1" />
+           <img src="./images/Portfolio-1.png" alt="Portrait of businesswoman" />
           <div class="recent-work-caption">// Lorem Ipsum</div>
         </div>
         <div class="recent-work-card">
-          <img src="./images/Portfolio-2.png" alt="Work 2" />
+           <img src="./images/Portfolio-2.png" alt="Team of business people" />
           <div class="recent-work-caption">// Simply Dummy</div>
         </div>
         <div class="recent-work-card recent-work-card--active">
-          <img src="./images/Portfolio-3.png" alt="Work 3" />
+           <img src="./images/Portfolio-3.png" alt="Business meeting" />
           <div class="recent-work-caption">// Printing</div>
         </div>
         <div class="recent-work-card">
-          <img src="./images/Portfolio-4.png" alt="Work 4" />
+           <img src="./images/Portfolio-4.png" alt="Colleagues working together" />
           <div class="recent-work-caption">// Standart Dummy</div>
         </div>
       </div>
     </section>
     <section class="tiger-section">
       <div class="tiger-img">
-        <img src="./images/video.png" alt="Tales of a Tiger" />
+          <img src="./images/video.png" alt="Man watching video on laptop" />
       </div>
       <div class="tiger-content">
         <h2 class="tiger-title">Tales of a Tiger</h2>
@@ -154,35 +153,35 @@
       <div class="news-underline"></div>
       <div class="news-grid">
         <div class="news-card">
-          <img src="./images/news-1.png" alt="">
+           <img src="./images/news-1.png" alt="Woman thinking at desk">
           <div class="news-caption">Lorem Ipsum</div>
         </div>
         <div class="news-card">
-          <img src="images/news-2.png" alt="">
+           <img src="./images/news-2.png" alt="Business team smiling">
           <div class="news-caption">Simply Dummy</div>
         </div>
         <div class="news-card news-card--active">
-          <img src="images/blog-3.png" alt="">
+           <img src="./images/blog-3.png" alt="People discussing project">
           <div class="news-caption">Printing</div>
         </div>
         <div class="news-card">
-          <img src="images/mask (2).png" alt="">
+           <img src="./images/mask (2).png" alt="Group working on laptops">
           <div class="news-caption">Standart Dummy</div>
         </div>
         <div class="news-card">
-          <img src="images/mask (3).png" alt="">
+           <img src="./images/mask (3).png" alt="Man relaxing with laptop">
           <div class="news-caption">Lorem Ipsum</div>
         </div>
         <div class="news-card">
-          <img src="images/mask (4).png" alt="">
+           <img src="./images/mask (4).png" alt="Woman working on laptop">
           <div class="news-caption">Simply Dummy</div>
         </div>
         <div class="news-card">
-          <img src="images/mask (5).png" alt="">
+           <img src="./images/mask (5).png" alt="Man using laptop on floor">
           <div class="news-caption">Printing</div>
         </div>
         <div class="news-card">
-          <img src="images/mask (6).png" alt="">
+           <img src="./images/mask (6).png" alt="Business partners talking">
           <div class="news-caption">Standart Dummy</div>
         </div>
       </div>
@@ -198,7 +197,7 @@
     </section>
     <footer class="footer-section">
       <div class="footer-logo">
-        <img src="./images/Footer Logo.png" alt="Logo" />
+          <img src="./images/Footer Logo.png" alt="Footer logo" />
       </div>
       <div class="footer-contact">
         <p class="footer-contact-title">
@@ -244,10 +243,14 @@
         <span
           >Copyright © 2014 <span class="footer-theme">AristoTheme</span></span
         >
-        <span class="footer-back"
-          >BACK TO TOP <span class="footer-up">∧</span></span
-        >
+        <a href="#" class="footer-back" id="backToTop">BACK TO TOP <span class="footer-up">∧</span></a>
       </div>
     </footer>
+  <script>
+    document.getElementById('backToTop').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
   </body>
 </html>
