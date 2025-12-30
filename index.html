@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="./css/services.css" />
     <link rel="stylesheet" href="./css/works-news.css" />
     <link rel="stylesheet" href="./css/footer-cta.css" />
+    <!-- Head ichida -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   </head>
   <body>
     <header class="header">
@@ -68,27 +70,27 @@
         </p>
       </div>
       <div class="services-grid">
-        <div class="service-card">
+        <div class="service-card" data-aos="fade-up">
           <img src="./images/svg/Object.svg" alt="Strategy" />
           <div class="service-title">STRATEGY</div>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-aos="fade-up">
           <img src="./images/svg/Object (1).svg" alt="Analytics" />
           <div class="service-title">ANALYTICS</div>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-aos="fade-up">
           <img src="./images/svg/Object (2).svg" alt="Social Media" />
           <div class="service-title">SOCIAL MEDIA</div>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-aos="fade-up">
           <img src="./images/svg/Object (3).svg" alt="Development" />
           <div class="service-title">DEVELOPMENT</div>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-aos="fade-up">
           <img src="./images/svg/Object (4).svg" alt="Content Production" />
           <div class="service-title">CONTENT PRODUCTION</div>
         </div>
-        <div class="service-card service-card--active">
+        <div class="service-card service-card--active" data-aos="fade-up">
           <img src="./images/svg/Object (5).svg" alt="Design & UX" />
           <div class="service-title">DESIGN & UX</div>
           <div class="service-desc">
@@ -96,11 +98,11 @@
           </div>
           <a href="#" class="service-link">Full View &rarr;</a>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-aos="fade-up">
           <img src="./images/svg/Object (6).svg" alt="Digital Advertising" />
           <div class="service-title">DIGITAL ADVERTISING</div>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-aos="fade-up">
           <img src="./images/svg/Object (7).svg" alt="Products" />
           <div class="service-title">PRODUCTS</div>
         </div>
@@ -246,10 +248,24 @@
         <a href="#" class="footer-back" id="backToTop">BACK TO TOP <span class="footer-up">∧</span></a>
       </div>
     </footer>
+  <!-- Body oxirida -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
   <script>
     document.getElementById('backToTop').addEventListener('click', function(e) {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    // Fade-in uchun
+    document.querySelectorAll('.service-card').forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        card.style.transform = 'scale(1.05)';
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
     });
   </script>
   </body>
