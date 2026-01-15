@@ -125,6 +125,65 @@
   object-fit: cover;
   display: block;
 }
+
+/* ========== Responsive: NEWS SECTION ========== */
+@media (max-width: 1200px) {
+  .news-grid {
+    gap: 24px;
+    justify-content: center;
+  }
+  .news-card {
+    width: calc(33.333% - 24px);
+    height: auto;
+    flex: 0 0 calc(33.333% - 24px);
+  }
+  .news-card img {
+    height: 220px;
+  }
+}
+
+@media (max-width: 800px) {
+  .news-grid {
+    gap: 18px;
+    justify-content: center;
+  }
+  .news-card {
+    width: calc(50% - 16px);
+    flex: 0 0 calc(50% - 16px);
+  }
+  .news-card img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  .news-grid {
+    gap: 12px;
+    justify-content: center;
+  }
+  .news-card {
+    width: 100%;
+    flex: 0 0 100%;
+    height: auto;
+  }
+  .news-card img {
+    height: 240px;
+  }
+  .news-caption {
+    padding: 12px 14px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .news-card img {
+    height: 180px;
+  }
+  .news-caption {
+    font-size: 0.95rem;
+    padding: 10px 12px;
+  }
+}
 .news-caption {
   background: #fff;
   font-family: 'Dosis', sans-serif;
