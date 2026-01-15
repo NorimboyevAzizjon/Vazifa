@@ -1,0 +1,53 @@
+/* Lightweight animations for Vazifa site */
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-left, .reveal-right, .tilt, .pulse { transition: none !important; animation: none !important; }
+}
+
+/* Reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 620ms ease-out, transform 620ms ease-out;
+  will-change: opacity, transform;
+}
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-18px);
+  transition: opacity 620ms ease-out, transform 620ms ease-out;
+}
+.reveal-left.is-visible { opacity: 1; transform: translateX(0); }
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(18px);
+  transition: opacity 620ms ease-out, transform 620ms ease-out;
+}
+.reveal-right.is-visible { opacity: 1; transform: translateX(0); }
+
+/* Button microinteraction */
+.pulse {
+  animation: pulse 1.8s infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(94,184,110,0.16); }
+  70% { box-shadow: 0 0 0 18px rgba(94,184,110,0); }
+  100% { box-shadow: 0 0 0 0 rgba(94,184,110,0); }
+}
+
+/* Card tilt (simple) */
+.tilt {
+  transition: transform 220ms ease, box-shadow 220ms ease;
+  transform-origin: center;
+}
+.tilt:hover { transform: perspective(800px) rotateX(4deg) translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); }
+
+/* SVG draw helper (for inline SVG) */
+.svg-draw path { stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: draw 900ms forwards ease-out; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+
+/* Utility */
+.is-hidden { visibility: hidden; }
