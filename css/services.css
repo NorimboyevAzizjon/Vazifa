@@ -1,4 +1,3 @@
-/* ========== SERVICES SECTION ========== */
 .services-section {
   display: flex;
   flex-direction: row;
@@ -179,7 +178,6 @@
   background: #388e3c;
 }
 
-/* Responsive styles for services section */
 @media (max-width: 1200px) {
   .services {
     padding: 40px 20px;
