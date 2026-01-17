@@ -24,7 +24,7 @@
 }
 .reveal-right.is-visible { opacity: 1; transform: translateX(0); }
 
-
+ 
 .pulse {
   animation: pulse 1.8s infinite;
 }

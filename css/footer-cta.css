@@ -92,6 +92,7 @@
   background: #6eb37b;
   position: relative;
   padding-top: 30px;
+  margin-top: 80px;
   color: #fff;
   font-family: 'Dosis', sans-serif;
 }
@@ -138,6 +139,18 @@
   font-size: 2rem;
   margin: 32px 0 32px 0;
   opacity: 0.7;
+}
+
+.footer-social .footer-social-link {
+  color: #fff;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-social .footer-social-link:focus {
+  outline: 2px solid rgba(255,255,255,0.9);
+  outline-offset: 4px;
 }
 .footer-info {
   display: flex;
