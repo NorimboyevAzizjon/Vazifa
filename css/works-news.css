@@ -1,9 +1,10 @@
 .recent-works-section {
   width: 100%;
-  background-image: linear-gradient(180deg, rgba(250,248,237,0.55) 0%, rgba(227,242,211,0.55) 100%), url('../images/mask (1).png');
+  background-color: #f1f8e9;
+  background-image: linear-gradient(180deg, rgba(250,248,237,0.6) 0%, rgba(227,242,211,0.7) 100%), url("../images/mask (1).png");
   background-repeat: no-repeat;
   background-position: right top;
-  background-size: 40% auto;
+  background-size: 45% auto;
   padding: 80px 0 60px 0;
   text-align: center;
   position: relative;
@@ -26,31 +27,27 @@
 }
 .recent-works-cards {
   display: grid;
+  grid-template-columns: repeat(4, 260px);
   gap: 36px 48px;
   justify-content: center;
   align-items: start;
   margin: 40px auto 0 auto;
-}
-
-@media (min-width: 1200px) {
-  .recent-works-cards {
-    grid-template-columns: repeat(4, 260px);
-    width: calc(260px * 4 + 48px * 3); /* 1184px total */
-  }
 }
 .recent-work-card {
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 16px rgba(94,184,110,0.06);
   overflow: hidden;
-  width: 100%;
+  width: 260px;
   transition: box-shadow 0.25s, border 0.25s, transform 0.25s;
   border: 3px solid transparent;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   cursor: pointer;
-  padding: 18px 18px 10px 18px;
+  padding: 18px 18px 14px 18px;
+  height: 300px;
 }
 .recent-work-card:hover {
   box-shadow: 0 8px 32px rgba(94,184,110,0.18);
@@ -60,52 +57,46 @@
 }
 .recent-work-card img {
   width: 100%;
-  height: 190px;
+  height: 170px;
   object-fit: cover;
   display: block;
   border-radius: 6px;
+  background: #faf8ed;
+  padding: 14px;
 }
 .recent-work-caption {
   font-family: 'Dosis', sans-serif;
   font-size: 1rem;
   font-weight: 600;
   color: #2f5d3a;
-  margin: 14px 0 0 0;
+  margin: 0 0 8px 0;
   letter-spacing: 1px;
   text-align: center;
 }
 
 .recent-work-caption:before {
-  content: "// ";
   color: #5eb86e;
   font-weight: 700;
   margin-right: 6px;
 }
 
-/* subtle background overlay look */
+/* subtle background overlay – butun bo‘lim ustida yengil yashil tint */
 .recent-works-section:before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 120px;
-  background: rgba(94,184,110,0.06);
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(94,184,110,0.04) 0%, rgba(227,242,211,0.08) 100%);
   pointer-events: none;
+  z-index: 0;
+}
+.recent-works-section .container {
+  position: relative;
+  z-index: 1;
 }
 
-@media (max-width: 991px) {
-  .recent-works-cards {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
-}
-
-@media (max-width: 575px) {
-  .recent-works-cards {
-    grid-template-columns: 1fr;
-  }
-}
 .recent-work-card--active {
   border: 3px solid #5eb86e;
   box-shadow: 0 2px 16px rgba(94,184,110,0.12);
@@ -116,9 +107,30 @@
 
 .news-section {
   width: 100%;
-  background: #faf8ed;
+  background-color: #f1f8e9;
+  background-image: linear-gradient(180deg, rgba(250,248,237,0.6) 0%, rgba(227,242,211,0.7) 100%), url("../images/mask (1).png");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: 45% auto;
   padding: 60px 0 40px 0;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.news-section:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(94,184,110,0.04) 0%, rgba(227,242,211,0.08) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+.news-section .container {
+  position: relative;
+  z-index: 1;
 }
 .news-title {
   font-family: 'Dosis', sans-serif;
@@ -136,12 +148,11 @@
   border-radius: 2px;
 }
 .news-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 32px;
-  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px 24px;
+  max-width: 1400px;
   margin: 0 auto;
-  justify-content: flex-start;
 }
 .news-card {
   background: #fff;
@@ -155,6 +166,7 @@
   border: 3px solid transparent;
   transition: box-shadow 0.25s, border 0.25s, transform 0.25s;
   cursor: pointer;
+  height: 320px;
 }
 .news-card:hover {
   box-shadow: 0 8px 32px rgba(94,184,110,0.18);
@@ -192,43 +204,4 @@
 .news-card--active .news-caption {
   background: #5eb86e;
   color: #fff;
-}
-
-.news-card:nth-child(1) {
-  width: 270px;
-  height: 443px;
-}
-.news-card:nth-child(2) {
-  width: 268px;
-  height: 341px;
-}
-.news-card:nth-child(3) {
-  width: 270px;
-  height: 383px;
-}
-.news-card:nth-child(4) {
-  width: 268px;
-  height: 210px;
-}
-.news-card:nth-child(5) {
-  width: 270px;
-  height: 197px;
-}
-.news-card:nth-child(6) {
-  width: 270px;
-  height: 342px;
-}
-.news-card:nth-child(7) {
-  width: 270px;
-  height: 342px;
-}
-.news-card:nth-child(8) {
-  width: 269px;
-  height: 198px;
-}
-
-.news-card img {
-  width: 100%;
-  height: 80%;
-  object-fit: cover;
 }
