@@ -197,3 +197,240 @@
 .tiger-btn:hover {
   background: #388e3c;
 }
+
+/* Media Queries */
+@media (max-width: 1199px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, auto);
+    align-items: start;
+  }
+  .service-card {
+    min-height: auto;
+    height: auto;
+  }
+  .service-card:nth-child(4n) {
+    border-right: 1px solid #f2f2f2;
+  }
+  .service-card:nth-child(2n) {
+    border-right: none;
+  }
+  .service-card:nth-child(n+5) {
+    border-bottom: 1px solid #f2f2f2;
+  }
+  .service-card:nth-child(n+7) {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .services-section {
+    width: 100%;
+    padding: 50px 0 35px 0;
+  }
+  .services-section > .container {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .services-left {
+    flex: 1;
+    padding: 0 30px;
+    text-align: center;
+  }
+  .services-left h3 {
+    font-size: 1.7rem;
+  }
+  .services-underline {
+    margin: 0 auto 20px auto;
+  }
+  .services-left p {
+    font-size: 1rem;
+  }
+  .services-grid {
+    flex: 1;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, auto);
+    min-height: auto;
+    align-items: start;
+  }
+  .service-card {
+    min-height: auto;
+    padding: 20px 8px;
+  }
+  .service-card img {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 14px;
+  }
+  .service-title {
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+  }
+  .tiger-section {
+    flex-direction: column;
+    gap: 40px;
+    padding: 50px 20px 35px 20px;
+    margin: 0 auto 30px auto;
+  }
+  .tiger-img img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+  .tiger-content {
+    align-items: center;
+    text-align: center;
+  }
+  .tiger-title {
+    font-size: 2rem;
+  }
+  .tiger-underline {
+    margin: 18px auto 28px auto;
+  }
+  .tiger-desc {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .services-section {
+    padding: 40px 0 30px 0;
+  }
+  .services-left {
+    padding: 0 20px;
+  }
+  .services-left h3 {
+    font-size: 1.5rem;
+    margin-bottom: 14px;
+  }
+  .services-underline {
+    width: 70px;
+    height: 6px;
+    margin-bottom: 18px;
+  }
+  .services-left p {
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+  }
+  .services-grid {
+    gap: 0;
+    border: 1px solid #f2f2f2;
+  }
+  .service-card {
+    padding: 18px 6px;
+  }
+  .service-card img {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 12px;
+  }
+  .service-title {
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+  }
+  .service-desc {
+    font-size: 0.9rem;
+  }
+  .service-link {
+    font-size: 1rem;
+  }
+  .tiger-section {
+    padding: 40px 15px 30px 15px;
+    gap: 30px;
+  }
+  .tiger-title {
+    font-size: 1.7rem;
+  }
+  .tiger-underline {
+    width: 100px;
+    height: 6px;
+    margin: 14px auto 24px auto;
+  }
+  .tiger-desc {
+    font-size: 0.95rem;
+  }
+  .tiger-btn {
+    padding: 14px 36px;
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+  }
+}
+
+@media (max-width: 575px) {
+  .services-section {
+    padding: 35px 0 25px 0;
+  }
+  .services-section > .container {
+    gap: 30px;
+  }
+  .services-left {
+    padding: 0 15px;
+  }
+  .services-left h3 {
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+  }
+  .services-underline {
+    width: 60px;
+    height: 5px;
+    margin-bottom: 16px;
+  }
+  .services-left p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(8, auto);
+  }
+  .service-card {
+    border-right: none !important;
+    border-bottom: 1px solid #f2f2f2;
+    padding: 20px 10px;
+  }
+  .service-card:nth-child(n+5) {
+    border-bottom: 1px solid #f2f2f2;
+  }
+  .service-card:last-child {
+    border-bottom: none;
+  }
+  .service-card img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+  }
+  .service-title {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+  .service-desc {
+    font-size: 0.85rem;
+    margin: 6px 0 0 0;
+  }
+  .service-link {
+    font-size: 0.95rem;
+    margin-top: 8px;
+  }
+  .tiger-section {
+    padding: 35px 10px 25px 10px;
+    gap: 25px;
+  }
+  .tiger-title {
+    font-size: 1.5rem;
+  }
+  .tiger-underline {
+    width: 80px;
+    height: 5px;
+    margin: 12px auto 20px auto;
+  }
+  .tiger-desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .tiger-btn {
+    padding: 12px 32px;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    margin-top: 14px;
+  }
+}
