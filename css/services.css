@@ -4,8 +4,6 @@
   padding: 60px 0 40px 0;
   background: #fff;
 }
-
-/* Make the inner container a flex row so left text and grid are side-by-side */
 .services-section > .container {
   display: flex;
   gap: 32px;
@@ -81,18 +79,13 @@
   height: 56px;
   margin-bottom: 18px;
 }
-
-/* remove right border on last column */
 .service-card:nth-child(4n) {
   border-right: none;
 }
 
-/* remove bottom border on last row (items 5-8) */
 .service-card:nth-child(n+5) {
   border-bottom: none;
 }
-
-
 .service-title {
   font-family: 'Dosis', sans-serif;
   font-size: 1.1rem;
@@ -197,8 +190,6 @@
 .tiger-btn:hover {
   background: #388e3c;
 }
-
-/* Media Queries */
 @media (max-width: 1199px) {
   .services-grid {
     grid-template-columns: repeat(2, 1fr);

@@ -158,7 +158,6 @@
   z-index: 10;
 }
 
-/* Media Queries */
 @media (max-width: 991px) {
   .big-title {
     font-size: 70px;
