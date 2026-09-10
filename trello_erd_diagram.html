@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trello Maʼlumotlar Bazasi Strukturasi (ERD)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <style>
+        body {
+            background-color: #f8fafc;
+            color: #1e293b;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+        .header-box {
+            background: linear-gradient(135deg, #0079bf 0%, #026aa7 100%);
+            color: white;
+            padding: 2.5rem 0;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 12px rgba(0, 121, 191, 0.2);
+        }
+        .table-card {
+            background: white;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+        .table-card .card-header {
+            background: #f1f5f9;
+            font-weight: 700;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .diagram-container {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.07);
+            border: 1px solid #e2e8f0;
+            overflow-x: auto;
+        }
+        .badge-pk { background-color: #fee2e2; color: #991b1b; font-weight: 600; }
+        .badge-fk { background-color: #dbeafe; color: #1e40af; font-weight: 600; }
+        .step-box {
+            background: #ffffff;
+            border-left: 4px solid #0079bf;
+            padding: 1.25rem;
+            border-radius: 0 10px 10px 0;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header-box mb-4">
+        <div class="container">
+            <div class="d-flex align-items-center gap-3">
+                <i class="bi bi-kanban-fill display-5"></i>
+                <div>
+                    <h1 class="h2 fw-bold mb-1">Trello Loyihasi: Maʼlumotlar Bazasi Strukturasi (ERD)</h1>
+                    <p class="mb-0 text-white-50">Workspaces, Boards, Lists, Cards, Members, Templates, Checklists va h.k.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container pb-5">
+
+        <!-- Havolani olish yo'riqnomasi -->
+        <div class="card border-0 shadow-sm rounded-4 p-4 mb-4 bg-white">
+            <h4 class="fw-bold text-primary mb-3">
+                <i class="bi bi-link-45deg"></i> Vazifani topshirish uchun havolani (Link) 1 daqiqada olish:
+            </h4>
+            
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="step-box h-100">
+                        <h6 class="fw-bold text-dark">1-USUL: dbdiagram.io (Eng tavsiya etiladigani)</h6>
+                        <ol class="small text-muted ps-3 mb-2">
+                            <li><a href="https://dbdiagram.io" target="_blank" class="fw-bold">dbdiagram.io</a> saytiga kiring.</li>
+                            <li>Loyihadagi <code>schema.dbml</code> fayli ichidagi barcha kodni nusxalang (Ctrl+A, Ctrl+C).</li>
+                            <li>Chap tomondagi maydonga qoʻying — oʻng tomonda diagramma avtomatik chiziladi.</li>
+                            <li>Yuqori oʻng burchakdagi <strong>"Share"</strong> tugmasini bosib, olingan havolani nusxalang va topshiring!</li>
+                        </ol>
+                        <a href="https://dbdiagram.io" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">
+                            dbdiagram.io saytiga oʻtish <i class="bi bi-box-arrow-up-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="step-box h-100" style="border-left-color: #10b981;">
+                        <h6 class="fw-bold text-dark">2-USUL: drawsql.app</h6>
+                        <ol class="small text-muted ps-3 mb-2">
+                            <li><a href="https://drawsql.app" target="_blank" class="fw-bold">drawsql.app</a> saytiga kiring.</li>
+                            <li>Yangi diagramma oching va <strong>"Import SQL"</strong> tugmasini bosing.</li>
+                            <li>Loyihadagi <code>database_schema.sql</code> kodini qoʻying.</li>
+                            <li>Oʻng tarafdagi <strong>"Share" (Public link)</strong> orqali havolani oling va yuboring!</li>
+                        </ol>
+                        <a href="https://drawsql.app" target="_blank" class="btn btn-sm btn-outline-success rounded-pill">
+                            drawsql.app saytiga oʻtish <i class="bi bi-box-arrow-up-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vizual ERD Diagrammasi (Mermaid) -->
+        <div class="diagram-container mb-5">
+            <h4 class="fw-bold text-dark mb-3"><i class="bi bi-diagram-3-fill text-primary"></i> Vizual ERD Bogʻlanishlar Diagrammasi</h4>
+            <div class="mermaid text-center">
+erDiagram
+    USERS ||--o{ WORKSPACES : "egasi (owner_id)"
+    USERS ||--o{ WORKSPACE_MEMBERS : "a'zolik"
+    WORKSPACES ||--o{ WORKSPACE_MEMBERS : "ichidagi a'zolar"
+    WORKSPACES ||--o{ BOARDS : "tegishli doskalar"
+    USERS ||--o{ BOARDS : "yaratuvchi"
+    BOARDS ||--o{ BOARD_MEMBERS : "doska a'zolari"
+    USERS ||--o{ BOARD_MEMBERS : "foydalanuvchi"
+    BOARDS ||--o{ TEMPLATES : "shablon qilingan"
+    USERS ||--o{ TEMPLATES : "shablon egasi"
+    BOARDS ||--o{ LISTS : "ustunlar (lists)"
+    LISTS ||--o{ CARDS : "kartochkalar (cards)"
+    USERS ||--o{ CARDS : "yaratuvchi"
+    CARDS ||--o{ CARD_MEMBERS : "mas'ullar"
+    USERS ||--o{ CARD_MEMBERS : "biriktirilgan"
+    BOARDS ||--o{ LABELS : "yorliqlar"
+    CARDS ||--o{ CARD_LABELS : "tanlangan teglar"
+    LABELS ||--o{ CARD_LABELS : "yorliq bog'lanishi"
+    CARDS ||--o{ CHECKLISTS : "tekshiruv ro'yxati"
+    CHECKLISTS ||--o{ CHECKLIST_ITEMS : "vazifa bandlari"
+    USERS ||--o{ CHECKLIST_ITEMS : "mas'ul shaxs"
+    CARDS ||--o{ ATTACHMENTS : "fayllar"
+    USERS ||--o{ ATTACHMENTS : "yuklovchi"
+    CARDS ||--o{ COMMENTS : "izohlar"
+    USERS ||--o{ COMMENTS : "muallif"
+    BOARDS ||--o{ ACTIVITIES : "faoliyat loglari"
+    CARDS ||--o{ ACTIVITIES : "karta bo'yicha"
+    USERS ||--o{ ACTIVITIES : "harakat qiluvchi"
+            </div>
+        </div>
+
+        <!-- Jadvallar Tafsiloti -->
+        <h3 class="fw-bold text-dark mb-4"><i class="bi bi-table text-primary"></i> Jadvallar, Ustunlar va Maʼlumot Turlari</h3>
+
+        <div class="row g-4">
+
+            <!-- 1. Users -->
+            <div class="col-md-6">
+                <div class="table-card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <span><i class="bi bi-people-fill text-primary"></i> users</span>
+                        <span class="badge bg-secondary">Foydalanuvchilar</span>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-sm mb-0">
+                            <thead class="table-light small">
+                                <tr><th>Ustun</th><th>Turi</th><th>Izoh</th></tr>
+                            </thead>
+                            <tbody class="small">
+                                <tr><td><code>id</code> <span class="badge badge-pk">PK</span></td><td>INT</td><td>Asosiy kalit</td></tr>
+                                <tr><td><code>username</code></td><td>VARCHAR(50)</td><td>Foydalanuvchi login nomi (Unique)</td></tr>
+                                <tr><td><code>email</code></td><td>VARCHAR(100)</td><td>Elektron pochta (Unique)</td></tr>
+                                <tr><td><code>password_hash</code></td><td>VARCHAR(255)</td><td>Xeshlangan parol</td></tr>
+                                <tr><td><code>full_name</code></td><td>VARCHAR(100)</td><td>Ism va familiya</td></tr>
+                                <tr><td><code>avatar_url</code></td><td>VARCHAR(255)</td><td>Profil rasmi havolasi</td></tr>
+                                <tr><td><code>created_at</code></td><td>TIMESTAMP</td><td>Roʻyxatdan oʻtgan vaqti</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Workspaces -->
+            <div class="col-md-6">
+                <div class="table-card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <span><i class="bi bi-briefcase-fill text-primary"></i> workspaces</span>
+                        <span class="badge bg-secondary">Ishchi maydonlar</span>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-sm mb-0">
+                            <thead class="table-light small">
+                                <tr><th>Ustun</th><th>Turi</th><th>Izoh</th></tr>
+                            </thead>
+                            <tbody class="small">
+                                <tr><td><code>id</code> <span class="badge badge-pk">PK</span></td><td>INT</td><td>Asosiy kalit</td></tr>
+                                <tr><td><code>name</code></td><td>VARCHAR(100)</td><td>Maydon nomi (masalan: "Marketing Team")</td></tr>
+                                <tr><td><code>slug</code></td><td>VARCHAR(120)</td><td>URL manzili (Unique)</td></tr>
+                                <tr><td><code>workspace_type</code></td><td>VARCHAR(50)</td><td>Turi (business, personal, education)</td></tr>
+                                <tr><td><code>owner_id</code> <span class="badge badge-fk">FK</span></td><td>INT</td><td>Egasi -> users(id)</td></tr>
+                                <tr><td><code>created_at</code></td><td>TIMESTAMP</td><td>Yaratilgan sana</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Workspace Members -->
+            <div class="col-md-6">
+                <div class="table-card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <span><i class="bi bi-person-check-fill text-primary"></i> workspace_members</span>
+                        <span class="badge bg-secondary">Workspace Aʼzolari</span>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-sm mb-0">
+                            <thead class="table-light small">
+                                <tr><th>Ustun</th><th>Turi</th><th>Izoh</th></tr>
+                            </thead>
+                            <tbody class="small">
+                                <tr><td><code>id</code> <span class="badge badge-pk">PK</span></td><td>INT</td><td>Asosiy kalit</td></tr>
+                                <tr><td><code>workspace_id</code> <span class="badge badge-fk">FK</span></td><td>INT</td><td>-> workspaces(id)</td></tr>
+                                <tr><td><code>user_id</code> <span class="badge badge-fk">FK</span></td><td>INT</td><td>-> users(id)</td></tr>
+                                <tr><td><code>role</code></td><td>VARCHAR(20)</td><td>Roli: owner, admin, member, guest</td></tr>
+                                <tr><td><code>joined_at</code></td><td>TIMESTAMP</td><td>Qoʻshilgan vaqti</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Boards -->
+            <div class="col-md-6">
+                <div class="table-card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <span><i class="bi bi-layout-three-columns text-primary"></i> boards</span>
+                        <span class="badge bg-secondary">Doskalar</span>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-sm mb-0">
+                            <thead class="table-light small">
+                                <tr><th>Ustun</th><th>Turi</th><th>Izoh</th></tr>
+                            </thead>
+                            <tbody class="small">
+                                <tr><td><code>id</code> <span class="badge badge-pk">PK</span></td><td>INT</td><td>Asosiy kalit</td></tr>
+                                <tr><td><code>workspace_id</code> <span class="badge badge-fk">FK</span></td><td>INT</td><td>-> workspaces(id)</td></tr>
+                                <tr><td><code>title</code></td><td>VARCHAR(150)</td><td>Doska nomi (masalan: "Sprint 1")</td></tr>
+                                <tr><td><code>visibility</code></td><td>VARCHAR(20)</td><td>private, workspace, public</td></tr>
+                                <tr><td><code>background_color</code></td><td>VARCHAR(20)</td><td>Fon rangi</td></tr>
+                                <tr><td><code>is_template</code></td><td>BOOLEAN</td><td>Shablon sifatida belgilanganmi?</td></tr>
+                                <tr><td><code>is_closed</code></td><td>BOOLEAN</td><td>Arxivlanganmi?</td></tr>
+                                <tr><td><code>created_by</code> <span class="badge badge-fk">FK</span></td><td>INT</td><td>-> users(id)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Lists -->
+            <div class="col-md-6">
+                <div class="table-card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <span><i class="bi bi-list-task text-primary"></i> lists</span>
+                        <span class="badge bg-secondary">Ustunlar / Boʻlimlar</span>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-sm mb-0">
+                            <thead class="table-light small">
+                                <tr><th>Ustun</th><th>Turi</th><th>Izoh</th></tr>
+                            </thead>
+                            <tbody class="small">
+                                <tr><td><code>id</code> <span class="badge badge-pk">PK</span></td><td>INT</td><td>Asosiy kalit</td></tr>
+                                <tr><td><code>board_id</code> <span class="badge badge-fk">FK</span></td><td>INT</td><td>-> boards(id)</td></tr>
+                                <tr><td><code>title</code></td><td>VARCHAR(100)</td><td>Nomi ("To Do", "Doing", "Done")</td></tr>
+                                <tr><td><code>position</code></td><td>DECIMAL(10,2)</td><td>Drag & Drop uchun tartib raqami</td></tr>
+                                <tr><td><code>is_archived</code></td><td>BOOLEAN</td><td>Arxivlanganmi?</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Cards -->
+            <div class="col-md-6">
+                <div class="table-card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <span><i class="bi bi-card-text text-primary"></i> cards</span>
+                        <span class="badge bg-secondary">Vazifa Kartochkalari</span>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-sm mb-0">
+                            <thead class="table-light small">
+                                <tr><th>Ustun</th><th>Turi</th><th>Izoh</th></tr>
+                            </thead>
+                            <tbody class="small">
+                                <tr><td><code>id</code> <span class="badge badge-pk">PK</span></td><td>INT</td><td>Asosiy kalit</td></tr>
+                                <tr><td><code>list_id</code> <span class="badge badge-fk">FK</span></td><td>INT</td><td>-> lists(id)</td></tr>
+                                <tr><td><code>title</code></td><td>VARCHAR(255)</td><td>Vazifa sarlavhasi</td></tr>
+                                <tr><td><code>description</code></td><td>TEXT</td><td>Tafsilotli tavsif</td></tr>
+                                <tr><td><code>position</code></td><td>DECIMAL(10,2)</td><td>Roʻyxat ichidagi oʻrni</td></tr>
+                                <tr><td><code>due_date</code></td><td>TIMESTAMP</td><td>Tugash muddati (Deadline)</td></tr>
+                                <tr><td><code>is_completed</code></td><td>BOOLEAN</td><td>Bajarildimi?</td></tr>
+                                <tr><td><code>created_by</code> <span class="badge badge-fk">FK</span></td><td>INT</td><td>-> users(id)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Card Members -->
+            <div class="col-md-6">
+                <div class="table-card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <span><i class="bi bi-person-fill-gear text-primary"></i> card_members</span>
+                        <span class="badge bg-secondary">Karta Masʼullari</span>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-sm mb-0">
+                            <thead class="table-light small">
+                                <tr><th>Ustun</th><th>Turi</th><th>Izoh</th></tr>
+                            </thead>
+                            <tbody class="small">
+                                <tr><td><code>id</code> <span class="badge badge-pk">PK</span></td><td>INT</td><td>Asosiy kalit</td></tr>
+                                <tr><td><code>card_id</code> <span class="badge badge-fk">FK</span></td><td>INT</td><td>-> cards(id)</td></tr>
+                                <tr><td><code>user_id</code> <span class="badge badge-fk">FK</span></td><td>INT</td><td>-> users(id)</td></tr>
+                                <tr><td><code>assigned_at</code></td><td>TIMESTAMP</td><td>Biriktirilgan vaqt</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. Labels -->
+            <div class="col-md-6">
+                <div class="table-card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <span><i class="bi bi-tag-fill text-primary"></i> labels</span>
+                        <span class="badge bg-secondary">Yorliqlar / Teglar</span>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-sm mb-0">
+                            <thead class="table-light small">
+                                <tr><th>Ustun</th><th>Turi</th><th>Izoh</th></tr>
+                            </thead>
+                            <tbody class="small">
+                                <tr><td><code>id</code> <span class="badge badge-pk">PK</span></td><td>INT</td><td>Asosiy kalit</td></tr>
+                                <tr><td><code>board_id</code> <span class="badge badge-fk">FK</span></td><td>INT</td><td>-> boards(id)</td></tr>
+                                <tr><td><code>name</code></td><td>VARCHAR(50)</td><td>Yorliq matni ("Bug", "Feature")</td></tr>
+                                <tr><td><code>color_code</code></td><td>VARCHAR(20)</td><td>Rang kodi (#61bd4f)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 9. Checklists & Items -->
+            <div class="col-md-6">
+                <div class="table-card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <span><i class="bi bi-check2-square text-primary"></i> checklists & checklist_items</span>
+                        <span class="badge bg-secondary">Checklistlar</span>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-sm mb-0">
+                            <thead class="table-light small">
+                                <tr><th>Jadval / Ustun</th><th>Turi</th><th>Izoh</th></tr>
+                            </thead>
+                            <tbody class="small">
+                                <tr><td><code>checklists.id</code></td><td>INT</td><td>PK</td></tr>
+                                <tr><td><code>checklists.card_id</code></td><td>INT</td><td>-> cards(id)</td></tr>
+                                <tr><td><code>checklists.title</code></td><td>VARCHAR</td><td>Checklist sarlavhasi</td></tr>
+                                <tr><td><code>checklist_items.id</code></td><td>INT</td><td>PK</td></tr>
+                                <tr><td><code>checklist_items.checklist_id</code></td><td>INT</td><td>-> checklists(id)</td></tr>
+                                <tr><td><code>checklist_items.title</code></td><td>VARCHAR</td><td>Vazifa matni</td></tr>
+                                <tr><td><code>checklist_items.is_completed</code></td><td>BOOLEAN</td><td>Bajarilganlik holati</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 10. Templates -->
+            <div class="col-md-6">
+                <div class="table-card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <span><i class="bi bi-file-earmark-spreadsheet-fill text-primary"></i> templates</span>
+                        <span class="badge bg-secondary">Shablonlar</span>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-sm mb-0">
+                            <thead class="table-light small">
+                                <tr><th>Ustun</th><th>Turi</th><th>Izoh</th></tr>
+                            </thead>
+                            <tbody class="small">
+                                <tr><td><code>id</code> <span class="badge badge-pk">PK</span></td><td>INT</td><td>Asosiy kalit</td></tr>
+                                <tr><td><code>board_id</code> <span class="badge badge-fk">FK</span></td><td>INT</td><td>-> boards(id)</td></tr>
+                                <tr><td><code>title</code></td><td>VARCHAR(150)</td><td>Shablon nomi (masalan: "Kanban Template")</td></tr>
+                                <tr><td><code>category</code></td><td>VARCHAR(50)</td><td>Kategoriya ("Engineering", "Design")</td></tr>
+                                <tr><td><code>is_public</code></td><td>BOOLEAN</td><td>Umumiy foydalanish uchunmi?</td></tr>
+                                <tr><td><code>created_by</code> <span class="badge badge-fk">FK</span></td><td>INT</td><td>-> users(id)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        mermaid.initialize({ startOnLoad: true, theme: 'default' });
+    </script>
+</body>
+</html>
